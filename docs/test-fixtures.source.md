@@ -95,33 +95,16 @@ fixtures using non-type template parameters. These test cases work similar to `T
 with additional positional argument for [signature](test-cases-and-sections.md#signature-based-parametrised-test-cases).
 
 Example:
-```cpp
-template <int V>
-struct Nttp_Fixture{
-    int value = V;
-};
 
-TEMPLATE_TEST_CASE_METHOD_SIG(Nttp_Fixture, "A TEMPLATE_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][nttp]",((int V), V), 1, 3, 6) {
-    REQUIRE(Nttp_Fixture<V>::value > 0);
-}
+snippet: nttp_fixture_snippet
 
-template<typename T>
-struct Template_Fixture_2 {
-    Template_Fixture_2() {}
+snippet: template_test_case_method_sig_snippet
 
-    T m_a;
-};
+snippet: template_fixture_2_snippet
 
-template< typename T, size_t V>
-struct Template_Foo_2 {
-    size_t size() { return V; }
-};
+snippet: template_foo_2_snippet
 
-TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG(Template_Fixture_2, "A TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][product][nttp]", ((typename T, size_t S), T, S),(std::array, Template_Foo_2), ((int,2), (float,6)))
-{
-    REQUIRE(Template_Fixture_2<TestType>{}.m_a.size() >= 2);
-}
-```
+snippet: template_product_test_case_method_sig_snippet
 
 ## Template fixtures with types specified in template type lists
 

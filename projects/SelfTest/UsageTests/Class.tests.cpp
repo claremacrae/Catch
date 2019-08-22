@@ -47,27 +47,33 @@ struct Template_Fixture {
     T m_a;
 };
 
+// begin-snippet: template_fixture_2_snippet
 template<typename T>
 struct Template_Fixture_2 {
     Template_Fixture_2() {}
 
     T m_a;
 };
+// end-snippet
 
 template< typename T>
 struct Template_Foo {
     size_t size() { return 0; }
 };
 
+// begin-snippet: template_foo_2_snippet
 template< typename T, size_t V>
 struct Template_Foo_2 {
     size_t size() { return V; }
 };
+// end-snippet
 
+// begin-snippet: nttp_fixture_snippet
 template <int V>
 struct Nttp_Fixture{
     int value = V;
 };
+// end-snippet
 #endif
 
 
@@ -84,19 +90,23 @@ TEMPLATE_TEST_CASE_METHOD(Template_Fixture, "A TEMPLATE_TEST_CASE_METHOD based t
     REQUIRE( Template_Fixture<TestType>::m_a == 1 );
 }
 
+// begin-snippet: template_test_case_method_sig_snippet
 TEMPLATE_TEST_CASE_METHOD_SIG(Nttp_Fixture, "A TEMPLATE_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][nttp]",((int V), V), 1, 3, 6) {
     REQUIRE(Nttp_Fixture<V>::value > 0);
 }
+// end-snippet
 
 TEMPLATE_PRODUCT_TEST_CASE_METHOD(Template_Fixture_2, "A TEMPLATE_PRODUCT_TEST_CASE_METHOD based test run that succeeds","[class][template][product]",(std::vector,Template_Foo),(int,float))
 {
     REQUIRE( Template_Fixture_2<TestType>::m_a.size() == 0 );
 }
 
+// begin-snippet: template_product_test_case_method_sig_snippet
 TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG(Template_Fixture_2, "A TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][product][nttp]", ((typename T, size_t S), T, S),(std::array, Template_Foo_2), ((int,2), (float,6)))
 {
     REQUIRE(Template_Fixture_2<TestType>{}.m_a.size() >= 2);
 }
+// end-snippet
 
 using MyTypes = std::tuple<int, char, double>;
 TEMPLATE_LIST_TEST_CASE_METHOD(Template_Fixture, "Template test case method with test types specified inside std::tuple", "[class][template][list]", MyTypes)
