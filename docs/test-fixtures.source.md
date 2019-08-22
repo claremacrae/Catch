@@ -96,13 +96,9 @@ with additional positional argument for [signature](test-cases-and-sections.md#s
 
 Example:
 
-snippet: nttp_fixture_snippet
+snippet: class_test_helpers
 
-snippet: template_test_case_method_sig_snippet
-
-snippet: template_fixture_and_foo_2_snippet
-
-snippet: template_product_test_case_method_sig_snippet
+snippet: template_test_case_and_product_methods
 
 ## Template fixtures with types specified in template type lists
 
