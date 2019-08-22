@@ -100,9 +100,7 @@ snippet: nttp_fixture_snippet
 
 snippet: template_test_case_method_sig_snippet
 
-snippet: template_fixture_2_snippet
-
-snippet: template_foo_2_snippet
+snippet: template_fixture_and_foo_2_snippet
 
 snippet: template_product_test_case_method_sig_snippet
 

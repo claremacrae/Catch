@@ -47,21 +47,19 @@ struct Template_Fixture {
     T m_a;
 };
 
-// begin-snippet: template_fixture_2_snippet
+template< typename T>
+struct Template_Foo {
+    size_t size() { return 0; }
+};
+
+// begin-snippet: template_fixture_and_foo_2_snippet
 template<typename T>
 struct Template_Fixture_2 {
     Template_Fixture_2() {}
 
     T m_a;
 };
-// end-snippet
 
-template< typename T>
-struct Template_Foo {
-    size_t size() { return 0; }
-};
-
-// begin-snippet: template_foo_2_snippet
 template< typename T, size_t V>
 struct Template_Foo_2 {
     size_t size() { return V; }

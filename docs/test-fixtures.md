@@ -111,7 +111,7 @@ struct Nttp_Fixture{
     int value = V;
 };
 ```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L71-L76) / [anchor](#snippet-nttp_fixture_snippet)</sup>
+<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L69-L74) / [anchor](#snippet-nttp_fixture_snippet)</sup>
 <!-- endsnippet -->
 
 <!-- snippet: template_test_case_method_sig_snippet -->
@@ -121,11 +121,11 @@ TEMPLATE_TEST_CASE_METHOD_SIG(Nttp_Fixture, "A TEMPLATE_TEST_CASE_METHOD_SIG bas
     REQUIRE(Nttp_Fixture<V>::value > 0);
 }
 ```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L93-L97) / [anchor](#snippet-template_test_case_method_sig_snippet)</sup>
+<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L91-L95) / [anchor](#snippet-template_test_case_method_sig_snippet)</sup>
 <!-- endsnippet -->
 
-<!-- snippet: template_fixture_2_snippet -->
-<a id='snippet-template_fixture_2_snippet'/></a>
+<!-- snippet: template_fixture_and_foo_2_snippet -->
+<a id='snippet-template_fixture_and_foo_2_snippet'/></a>
 ```cpp
 template<typename T>
 struct Template_Fixture_2 {
@@ -133,19 +133,13 @@ struct Template_Fixture_2 {
 
     T m_a;
 };
-```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L50-L57) / [anchor](#snippet-template_fixture_2_snippet)</sup>
-<!-- endsnippet -->
 
-<!-- snippet: template_foo_2_snippet -->
-<a id='snippet-template_foo_2_snippet'/></a>
-```cpp
 template< typename T, size_t V>
 struct Template_Foo_2 {
     size_t size() { return V; }
 };
 ```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L64-L69) / [anchor](#snippet-template_foo_2_snippet)</sup>
+<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L55-L67) / [anchor](#snippet-template_fixture_and_foo_2_snippet)</sup>
 <!-- endsnippet -->
 
 <!-- snippet: template_product_test_case_method_sig_snippet -->
@@ -156,7 +150,7 @@ TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG(Template_Fixture_2, "A TEMPLATE_PRODUCT_TE
     REQUIRE(Template_Fixture_2<TestType>{}.m_a.size() >= 2);
 }
 ```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L104-L109) / [anchor](#snippet-template_product_test_case_method_sig_snippet)</sup>
+<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L102-L107) / [anchor](#snippet-template_product_test_case_method_sig_snippet)</sup>
 <!-- endsnippet -->
 
 ## Template fixtures with types specified in template type lists
