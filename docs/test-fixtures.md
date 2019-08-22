@@ -129,16 +129,23 @@ struct Template_Foo_2 {
 <!-- snippet: template_test_case_and_product_methods -->
 <a id='snippet-template_test_case_and_product_methods'/></a>
 ```cpp
-TEMPLATE_TEST_CASE_METHOD_SIG(Nttp_Fixture, "A TEMPLATE_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][nttp]",((int V), V), 1, 3, 6) {
+TEMPLATE_TEST_CASE_METHOD_SIG(
+        Nttp_Fixture,
+        "A TEMPLATE_TEST_CASE_METHOD_SIG based test run that succeeds",
+        "[class][template][nttp]",((int V), V), 1, 3, 6) {
     REQUIRE(Nttp_Fixture<V>::value > 0);
 }
 
-TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG(Template_Fixture_2, "A TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG based test run that succeeds", "[class][template][product][nttp]", ((typename T, size_t S), T, S),(std::array, Template_Foo_2), ((int,2), (float,6)))
+TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG(
+        Template_Fixture_2,
+        "A TEMPLATE_PRODUCT_TEST_CASE_METHOD_SIG based test run that succeeds",
+        "[class][template][product][nttp]",
+        ((typename T, size_t S), T, S),(std::array, Template_Foo_2), ((int,2), (float,6)))
 {
     REQUIRE(Template_Fixture_2<TestType>{}.m_a.size() >= 2);
 }
 ```
-<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L94-L103) / [anchor](#snippet-template_test_case_and_product_methods)</sup>
+<sup>[snippet source](/projects/SelfTest/UsageTests/Class.tests.cpp#L94-L110) / [anchor](#snippet-template_test_case_and_product_methods)</sup>
 <!-- endsnippet -->
 
 ## Template fixtures with types specified in template type lists
