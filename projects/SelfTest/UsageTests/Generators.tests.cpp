@@ -267,6 +267,19 @@ TEST_CASE("#1913 - GENERATEs can share a line", "[regression][generators]") {
     REQUIRE(i != j);
 }
 
+// begin-snippet: GeneratorsWithSections
+TEST_CASE("Generators") {
+    auto i = GENERATE(1, 2);
+    SECTION("one") {
+        auto j = GENERATE(-3, -2);
+        REQUIRE(j < i);
+    }
+    SECTION("two") {
+        auto k = GENERATE(4, 5, 6);
+        REQUIRE(i != k);
+    }
+}
+// end-snippet
 
 #if defined(__clang__)
 #pragma clang diagnostic pop

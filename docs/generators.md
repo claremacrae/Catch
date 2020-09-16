@@ -42,7 +42,11 @@ that allows users to implement their own generators.
 effects. The simplest usage is shown below, where the `SECTION` "one"
 runs 4 (2\*2) times, and `SECTION` "two" is run 6 times (2\*3).
 
-```
+<!-- Compile me -->
+
+<!-- snippet: GeneratorsWithSections -->
+<a id='snippet-generatorswithsections'></a>
+```cpp
 TEST_CASE("Generators") {
     auto i = GENERATE(1, 2);
     SECTION("one") {
@@ -55,6 +59,8 @@ TEST_CASE("Generators") {
     }
 }
 ```
+<sup><a href='/projects/SelfTest/UsageTests/Generators.tests.cpp#L270-L282' title='File snippet `generatorswithsections` was extracted from'>snippet source</a> | <a href='#snippet-generatorswithsections' title='Navigate to start of snippet `generatorswithsections`'>anchor</a></sup>
+<!-- endSnippet -->
 
 The specific order of the `SECTION`s will be "one", "one", "two", "two",
 "two", "one"...
